@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:\\\\Users\\\\65963\\\\Desktop\\\\designArchive26\\\\01identities\"\" 2>/dev/null || echo \"Directory does not exist \")",
+      "Bash(npx prettier:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(node -e \":*)",
+      "Bash(grep -v \"^[0-9]*:\\\\s*$\")",
+      "Bash(ls 02spatial/*.html)",
+      "Bash(ls 01identities/*.html)",
+      "Bash(ls 03industrial/*.html)",
+      "Bash(ls 04datavis/*.html)",
+      "Bash(ls 05intangible/*.html)",
+      "Bash(awk 'NR>=3700 && NR<=3795' css/cat-home-style.css)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/65963/Desktop/designArchive26/**)",
+      "Bash(done)"
+    ]
+  }
+}
