@@ -2873,6 +2873,10 @@ body {
     color: #fff !important;
   }
 
+  .hide-mobile {
+    display: none !important;
+  }
+
   /* Last item (5th) spans full width on bottom row */
   .col:last-child {
     grid-column: 1 / -1 !important;

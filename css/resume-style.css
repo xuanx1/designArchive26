@@ -2400,26 +2400,38 @@ li {
     flex-direction: column;
     grid-column-gap: 1em;
     grid-row-gap: 1em;
+    align-items: center;
+    text-align: center;
   }
 
   .subheading {
     font-size: 1em;
+    justify-content: center !important;
+    text-align: center;
+  }
+  .subheading > div {
+    justify-content: center !important;
   }
 
   .job_title {
     font-size: 1.4em;
+    text-align: center;
   }
 
   .job_description-list {
-    padding-left: 1em;
+    padding-left: 0;
   }
 
   .job_description-list_item {
-    padding-left: 0.8em;
+    padding-left: 0;
+    text-align: center;
   }
 
   .label {
     margin-bottom: 1.6em;
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 
   .job_image {
@@ -2428,12 +2440,38 @@ li {
     border-radius: 1em;
   }
 
-  .u-mb-4.u-sm-2 {
-    margin-bottom: 2em;
+  .job {
+    align-items: center;
+    text-align: center;
   }
 
   .job_date {
     font-size: 1em;
+    text-align: center;
+  }
+
+  .heading-huge {
+    text-align: center;
+  }
+
+  .sidebar_grid {
+    text-align: center;
+  }
+
+  .h6 {
+    text-align: center;
+  }
+
+  .back-to-top-bar {
+    text-align: center;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .grid.col-lg-3 {
+    grid-template-columns: 1fr;
   }
 
   .clone {
