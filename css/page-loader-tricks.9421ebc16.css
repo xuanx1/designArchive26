@@ -2571,56 +2571,56 @@ blockquote {
 
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f1898dceac79bd3fa4_circularstd-mediumitalic.otf")
+  src: url("../fonts/circularstd-mediumitalic.otf")
     format("opentype");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f2ac42919d99d8e7d1_circularstd-medium.otf")
+  src: url("../fonts/circularstd-medium.otf")
     format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f1e46b0e4023604a5e_circularstd-blackitalic.otf")
+  src: url("../fonts/circularstd-blackitalic.otf")
     format("opentype");
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f19f9d5c63f46e3764_circularstd-black.otf")
+  src: url("../fonts/circularstd-black.otf")
     format("opentype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f1ccad9470e56cd2a0_circularstd-bolditalic.otf")
+  src: url("../fonts/circularstd-bolditalic.otf")
     format("opentype");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f19f9d5c55346e3766_circularstd-bold.otf")
+  src: url("../fonts/circularstd-bold.otf")
     format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f15a5ed9e2e070538c_circularstd-bookitalic.otf")
+  src: url("../fonts/circularstd-bookitalic.otf")
     format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "Circular";
-  src: url("../images/5bc260f1e46b0e0b9c604a5f_circularstd-book.otf")
+  src: url("../fonts/circularstd-book.otf")
     format("opentype");
   font-weight: 400;
   font-style: normal;

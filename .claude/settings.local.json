@@ -15,7 +15,22 @@
       "Bash(for f:*)",
       "Bash(do echo:*)",
       "Read(//c/Users/65963/Desktop/designArchive26/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(grep -h \"src=\\\\|href=\" 03industrial/*.html)",
+      "Bash(grep -h \"github\\\\|369721617\\\\|382037992\\\\|389652831\\\\|393646328\\\\|470562640\\\\|472834174\\\\|473660038\" 04datavis/*.html)",
+      "Bash(mkdir -p fonts)",
+      "Bash(curl -sL \"https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2\" -o fonts/montserrat-regular.woff2)",
+      "Bash(curl -sL \"https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w5aXo.woff2\" -o fonts/montserrat-700.woff2)",
+      "Bash(curl -sL \"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -sL \"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap\" -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/120\")",
+      "Bash(curl -sL \"https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2\" -o montserrat-normal.woff2)",
+      "Bash(curl -sL \"https://fonts.gstatic.com/s/montserrat/v31/JTUQjIg1_i6t8kCHKm459WxRyS7m.woff2\" -o montserrat-italic.woff2)",
+      "Bash(curl -sL \"https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300..700;1,300..700&display=swap\" -H \"User-Agent: Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/120\")",
+      "Bash(curl -sL \"https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2\" -o dmsans-normal.woff2)",
+      "Bash(curl -sL \"https://fonts.gstatic.com/s/dmsans/v17/rP2Wp2ywxg089UriCZaSExd86J3t9jz86MvyyKy58Q.woff2\" -o dmsans-italic.woff2)",
+      "Bash(mv dream-car-01.jpg showroom-02.jpg)",
+      "Bash(mv datavis-app-01.jpg showroom-03.jpg)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }

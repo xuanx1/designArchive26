@@ -1,4 +1,42 @@
 (function () {
+  // Smooth scroll for back-to-top links
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href="#top"]');
+    if (!a) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
+(function () {
+  // Auto-update copyright year
+  var y = new Date().getFullYear();
+  document.querySelectorAll('.copyright-year').forEach(function(el) { el.textContent = y; });
+})();
+
+(function () {
+  // Auto-sync thumbnail tags from project spec pages
+  var links = document.querySelectorAll('.projects__link[href]');
+  if (!links.length) return;
+  links.forEach(function (link) {
+    var tagEl = link.querySelector('.tag .text-small');
+    if (!tagEl) return;
+    var href = link.getAttribute('href');
+    fetch(href)
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        var addr = tmp.querySelector('.project__address .text-large');
+        if (addr && addr.textContent.trim()) {
+          tagEl.textContent = addr.textContent.trim();
+        }
+      })
+      .catch(function () {});
+  });
+})();
+
+(function () {
   // Custom cursor — skip if already present (index.html has its own)
   if (document.querySelector('.cursor-wrapper')) return;
 

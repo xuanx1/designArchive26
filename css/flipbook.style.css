@@ -1465,3 +1465,20 @@
 .flipbook-textLayer .endOfContent.active {
   top: 0px;
 }
+
+/* Custom icon colours: grey default, blue on hover */
+.flipbook-icon-material,
+.flipbook-icon-fa {
+  color: #adb1b7 !important;
+  transition: color 200ms ease !important;
+}
+
+.flipbook-icon-material:hover,
+.flipbook-icon-fa:hover {
+  color: #2563eb !important;
+}
+
+.flipbook-btn-active .flipbook-icon-material,
+.flipbook-btn-active .flipbook-icon-fa {
+  color: #2563eb !important;
+}

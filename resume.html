@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html
   id="top"
   data-wf-page="6294150174c4064a9ffae09b"
@@ -38,23 +38,23 @@
     <meta name="google" content="sitelinkssearchbox" />
 
     <link href="css/resume-style.css" rel="stylesheet" type="text/css" />
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
-      type="text/javascript"
-    ></script>
-    <script type="text/javascript">
-      WebFont.load({
-        google: {
-          families: ["DM Sans:regular,500,700"],
-        },
-      });
-    </script>
-    <!--[if lt IE 9]>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
-        type="text/javascript"
-      ></script>
-    <![endif]-->
+    <link href="css/cat-home-style.css" rel="stylesheet" type="text/css" />
+    <style>
+      @font-face {
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 300 700;
+        font-display: swap;
+        src: url('fonts/dmsans-normal.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'DM Sans';
+        font-style: italic;
+        font-weight: 300 700;
+        font-display: swap;
+        src: url('fonts/dmsans-italic.woff2') format('woff2');
+      }
+    </style>
     <script type="text/javascript">
       !(function (o, c) {
         var n = c.documentElement,
@@ -71,8 +71,7 @@
       rel="shortcut icon"
       type="image/x-icon"
     />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="js/script.js"></script>
+
   </head>
 
   <body data-w-id="6294150174c406933dfae09c">
@@ -148,7 +147,7 @@
                 class="lottie-animation"
                 data-w-id="c4a95d10-c36c-46ee-240a-f78fa865e98e"
                 data-animation-type="lottie"
-                data-src="images/463-brightness.json"
+                data-src="data/brightness.json"
                 data-loop="0"
                 data-direction="1"
                 data-autoplay="0"
@@ -768,46 +767,68 @@
     </div>
     <script src="js/jquery-resume.js" type="text/javascript"></script>
     <script src="js/webflow-script-resume.js" type="text/javascript"></script>
+      <div class="back-to-top-bar">
+        <a href="#top">
+          <svg width="18" height="18" viewBox="0 0 1.44 1.44" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h1.44v1.44H0z" fill="none"/><path d="M0.198 0.918L0.282 1.002L0.72 0.565L1.158 1.002L1.242 0.918L0.72 0.395Z" fill="currentColor"/></svg>
+          Back to Top
+        </a>
+      </div>
 
-    <footer>
-      <a
-        href="#top"
-        style="
-          position: fixed;
-          bottom: 10px;
-          right: 18px;
-          text-decoration: none;
-          color: inherit;
-          font-family: inherit;
-          font-weight: 500;
-          display: flex;
-          align-items: center;
-          opacity: 1;
-          transition: opacity 0.3s;
-        "
-        onmouseover="this.style.opacity = 0.5"
-        onmouseout="this.style.opacity = 1"
-        class="back-to-top"
-      >
-        <svg
-          width="24px"
-          height="24px"
-          viewBox="0 0 1.44 1.44"
-          xmlns="http://www.w3.org/2000/svg"
-          style="padding-right: 3px"
-        >
-          <path d="M0 0h1.44v1.44H0z" fill="none" />
-          <g id="Shopicon">
-            <path
-              points="6.586,30.586 9.414,33.414 24,18.828 38.586,33.414 41.414,30.586 24,13.172"
-              d="M0.198 0.918L0.282 1.002L0.72 0.565L1.158 1.002L1.242 0.918L0.72 0.395Z"
-              fill="grey"
-            />
-          </g>
-        </svg>
-        BACK TO TOP
-      </a>
-    </footer>
+    <footer class="footer" style="position:relative;overflow:hidden;border-top:1px solid #0000001a;">
+    <div class="footer-bg-container" style="position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;"></div>
+        <div class="container" style="position:relative;z-index:1;">
+          <div class="footer__content">
+            <div class="footer__main">
+              <div class="footer__nav">
+                <a href="01identities/identities-home.html" class="footer__nav-link w-inline-block" data-hover-img="images/hover-identities.jpg"><div class="text-xlarge">Identities</div></a>
+                <a href="02spatial/spatial-home.html" class="footer__nav-link w-inline-block" data-hover-img="images/hover-spatial.jpg"><div class="text-xlarge">Spatial Planning</div></a>
+                <a href="03industrial/industrial-home.html" class="footer__nav-link w-inline-block" data-hover-img="images/hover-industrial.jpg"><div class="text-xlarge">Industrial Design</div></a>
+                <a href="04datavis/datavis-home.html" class="footer__nav-link w-inline-block" data-hover-img="images/hover-datavis.jpg"><div class="text-xlarge">Data Visualisation</div></a>
+                <a href="05intangible/intan-home.html" class="footer__nav-link w-inline-block" data-hover-img="images/hover-intangibles.jpg"><div class="text-xlarge">Intangibles</div></a>
+              </div>
+              <div class="footer__legal">
+                <div>XUAN &copy; <span class="copyright-year">2026</span> &mdash; All rights reserved.</div>
+                <a href="privacy-policy.html" class="footer__link w-inline-block"><div>Privacy Policy</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+    (function() {
+      var container = document.querySelector('.footer-bg-container');
+      if (!container) return;
+      var bgImages = [];
+      for (var i = 1; i <= 51; i++) {
+        bgImages.push('bg/sketch png-' + String(i).padStart(2,'0') + '.png');
+      }
+      function getRandom(n) { return [...bgImages].sort(function(){return 0.5-Math.random();}).slice(0,n); }
+      function show(imgs) {
+        container.innerHTML = '';
+        imgs.forEach(function(src) {
+          var d = document.createElement('div');
+          d.style.cssText = 'position:absolute;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 2s;width:11vw;height:11vw;pointer-events:none;';
+          d.style.backgroundImage = "url('" + src + "')";
+          d.style.top = (Math.random() * 60) + '%';
+          d.style.left = (Math.random() * 80) + '%';
+          d.style.transform = 'scale(' + (Math.random() * 0.4 + 0.8) + ')';
+          container.appendChild(d);
+          (function(el){ setTimeout(function(){ el.style.opacity='1'; }, 100); })(d);
+        });
+      }
+      function hide() { container.querySelectorAll('div').forEach(function(d){d.style.opacity='0';}); }
+      function loop() { show(getRandom(5)); setTimeout(function(){ hide(); setTimeout(loop,2000); },4000); }
+      loop();
+    })();
+  </script>
+  </footer>
+  <script>
+    (function() {
+      document.querySelectorAll('.footer__nav-link[data-hover-img]').forEach(function(link) {
+        link.style.setProperty('--hover-img', 'url("' + new URL(link.getAttribute('data-hover-img'), window.location.href).href + '")');
+      });
+    })();
+  </script>
+
 
     <!--
     Change background color based on time of the day
