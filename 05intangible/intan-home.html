@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -45,7 +45,7 @@
                     <div role="listitem" class="projects__item w-dyn-item">
                       <a href="st-biz-playbook.html" class="projects__link w-inline-block">
                         <div class="projects__thumb">
-                          <img src="images/st-npe.gif" loading="lazy" alt="ST Business Playbook" class="thumbnail-project" />
+                          <img src="images/playbook.png" loading="lazy" alt="ST Business Playbook" class="thumbnail-project" />
                           <div class="tag">
                             <div class="text-small">Playbook Development</div>
                           </div>
@@ -143,6 +143,24 @@
     })();
   </script>
 
-  <script src="../js/page-transitions.js"></script>
+    <script>
+    (function() {
+      var imgs = document.querySelectorAll('.thumbnail-project');
+      if (!imgs.length) return;
+      function update() {
+        imgs.forEach(function(img) {
+          var rect = img.parentElement.getBoundingClientRect();
+          var winH = window.innerHeight;
+          if (rect.bottom < 0 || rect.top > winH) return;
+          var progress = (rect.top + rect.height / 2) / winH;
+          var shift = (progress - 1) * 20;
+          img.style.transform = 'translateY(' + shift + '%)';
+        });
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+<script src="../js/page-transitions.js"></script>
 </body>
 </html>

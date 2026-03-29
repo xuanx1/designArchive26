@@ -2140,7 +2140,9 @@ li {
 .job_description-list_item {
   margin-bottom: 0.8em;
   padding-left: 3em;
-  list-style-type: disc;
+  list-style-type: none;
+  color: #999;
+  font-weight: 300;
 }
 
 .job_description-list_item.cc-last {
@@ -2165,7 +2167,7 @@ li {
 }
 
 .h6 {
-  color: #111;
+  color: #555;
   font-size: 1.2em;
   line-height: 1.4;
   font-weight: 500;
@@ -2195,6 +2197,24 @@ li {
   grid-template-columns: 1fr;
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
+  color: #888;
+  font-weight: 300;
+}
+
+.sidebar_grid li,
+.sidebar_grid div {
+  font-weight: 300 !important;
+  color: #999 !important;
+}
+
+.sidebar_grid .h6 {
+  color: #555 !important;
+  font-weight: 500 !important;
+}
+
+.sidebar_grid strong {
+  color: #777 !important;
+  font-weight: 500 !important;
 }
 
 .clone {
