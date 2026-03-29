@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html
   id="top"
   data-wf-page="6294150174c4064a9ffae09b"
@@ -104,106 +104,24 @@
         }
       </style>
     </div>
-    <div class="section">
+    <header class="header">
       <div class="container">
-        <div class="div-block">
-          <!-- home button -->
-          <a
-            href="index.html"
-            class="home-button"
-            style="
-              position: absolute;
-              top: 10px;
-              left: -90px;
-              top: 12px;
-              text-decoration: none;
-              color: inherit;
-            "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              fill="currentColor"
-              style="transform: scale(0.85)"
-            >
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-            </svg>
-          </a>
-
-          <!-- dark /light mode -->
-          <a
-            aria-label="Toggle dark / light mode"
-            data-w-id="7474ce0a-a9d8-640d-00a1-64371ee68dfd"
-            href="#"
-            target="_blank"
-            style="position: absolute; left: -52px"
-            class="toggle w-inline-block"
-          >
-            <div>
-              <div
-                data-is-ix2-target="1"
-                class="lottie-animation"
-                data-w-id="c4a95d10-c36c-46ee-240a-f78fa865e98e"
-                data-animation-type="lottie"
-                data-src="data/brightness.json"
-                data-loop="0"
-                data-direction="1"
-                data-autoplay="0"
-                data-renderer="svg"
-                data-default-duration="10.510510082408667"
-                data-duration="0"
-                data-ix2-initial-state="58"
-              ></div>
-            </div>
-          </a>
-
-          <style>
-            .home-button:hover,
-            .toggle:hover {
-              color: lightgrey;
-            }
-          </style>
-
-          <!-- get in touch button -->
-          <a
-            href="mailto:xuan.t7@proton.me"
-            class="clone w-inline-block"
-            onclick="
-              navigator.clipboard.writeText('xuan.t7@proton.me');
-              var div = this.querySelector('div');
-              div.innerText = 'Email Copied!';
-              setTimeout(function () {
-                div.innerText = 'Get in Touch';
-              }, 1500);
-              return false;
-            "
-          >
-            <div>Get in Touch</div>
-
-            <div
-              style="
-                -webkit-transform: translate3d(0, 100%, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -moz-transform: translate3d(0, 100%, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -ms-transform: translate3d(0, 100%, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                transform: translate3d(0, 100%, 0) scale3d(1, 1, 1) rotateX(0)
-                  rotateY(0) rotateZ(0) skew(0, 0);
-                opacity: 0;
-              "
-              class="cover"
-            ></div>
-          </a>
+        <div class="top-bar">
+          <div style="display:flex;gap:0;"><a href="index.html" class="nav-link w-nav-link">Work</a><span style="opacity:0.4;"> / </span><span class="nav-link w-nav-link" style="cursor:default;color:#2563eb;">Resume</span></div>
+          <a href="index.html" class="brand w-inline-block" style="font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 1.1rem; color: inherit; text-decoration: none; letter-spacing: 2px;">XUAN</a>
         </div>
-        <div class="u-mb-4 u-sm-2">
-          <h1 class="heading">Xuan</h1>
+      </div>
+    </header>
+
+    <main class="sections top-padding">
+      <div class="container">
+        <div class="max-width-regular">
+          <h1 class="heading-huge" style="margin-bottom: 1.5rem;">Resume</h1>
+          <h2 class="heading">Xuan</h2>
           <div class="subheading">
-            <a href="tel:6462842705">(646) 284 2705</a>
+            <a href="https://wa.me/6596369362" target="_blank">+65 9636 9362</a>
             <div class="divider_ball"></div>
-            <a href="#">xuan.t7@proton.me</a>
+            <a href="#" onclick="navigator.clipboard.writeText('xuan.t7@proton.me'); this.innerText='Copied!'; var t=this; setTimeout(function(){t.innerText='xuan.t7@proton.me'},1500); return false;">xuan.t7@proton.me</a>
           </div>
 
           <div class="subheading">
@@ -764,7 +682,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <script src="js/jquery-resume.js" type="text/javascript"></script>
     <script src="js/webflow-script-resume.js" type="text/javascript"></script>
       <div class="back-to-top-bar">
@@ -788,7 +706,7 @@
               </div>
               <div class="footer__legal">
                 <div>XUAN &copy; <span class="copyright-year">2026</span> &mdash; All rights reserved.</div>
-                <a href="privacy-policy.html" class="footer__link w-inline-block"><div>Privacy Policy</div></a>
+                <div style="display:flex;align-items:center;gap:0.5rem"><a href="index.html" class="footer__link w-inline-block"><div>Home</div></a> / <a href="privacy-policy.html" class="footer__link w-inline-block"><div>Privacy Policy</div></a></div>
               </div>
             </div>
           </div>

@@ -2214,15 +2214,6 @@ body {
   color: rgba(47, 55, 65, 0.4);
 }
 
-.nav-link-3 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
-}
-
 .brand {
   float: left;
   clear: none;
@@ -2294,37 +2285,11 @@ body {
   margin-top: 22px;
   margin-bottom: 0;
   float: none;
+  transform: translateX(-13px);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.nav-link-4 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
-}
-
-.nav-link-5 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
-}
-
-.nav-link-6 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
 }
 
 .social-1 {
@@ -2338,33 +2303,6 @@ body {
 }
 
 .social-2 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
-}
-
-.social-3 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
-}
-
-.social-4 {
-  margin-right: 10px;
-  margin-left: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-family: Circular, sans-serif;
-  color: #2f3741;
-}
-
-.social-5 {
   margin-right: 10px;
   margin-left: 10px;
   padding-right: 10px;
@@ -2440,7 +2378,7 @@ body {
   -ms-flex: 0 auto;
   flex: 0 auto;
   grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-row-gap: 6px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
 }
@@ -2455,7 +2393,7 @@ body {
 }
 
 .social-link {
-  margin-top: 15px;
+  margin-top: 0;
   margin-right: 0px;
   margin-left: 30px;
   padding-top: 0px;
@@ -2635,6 +2573,9 @@ body {
   }
   #clocks-widget {
     display: none !important;
+  }
+  .collab-email {
+    display: none;
   }
   #w-node-9485a07ab083 {
     grid-column: 1 / 2;
@@ -2958,16 +2899,16 @@ body {
   .social-link {
     margin-top: 0 !important;
     margin-right: 24px !important;
+    position: relative;
+    top: 10px;
+    left: 5px;
   }
   .div-block {
     align-items: center !important;
   }
   .div-block .heading {
-    margin-top: 0 !important;
+    margin-left: 10px !important;
     float: none !important;
     clear: none !important;
-  }
-  #read {
-    display: inline-block !important;
   }
 }
