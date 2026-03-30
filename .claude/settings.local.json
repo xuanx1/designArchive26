@@ -30,7 +30,8 @@
       "Bash(curl -sL \"https://fonts.gstatic.com/s/dmsans/v17/rP2Wp2ywxg089UriCZaSExd86J3t9jz86MvyyKy58Q.woff2\" -o dmsans-italic.woff2)",
       "Bash(mv dream-car-01.jpg showroom-02.jpg)",
       "Bash(mv datavis-app-01.jpg showroom-03.jpg)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(python -c \":*)"
     ]
   }
 }
