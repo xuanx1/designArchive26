@@ -31,7 +31,13 @@
       "Bash(mv dream-car-01.jpg showroom-02.jpg)",
       "Bash(mv datavis-app-01.jpg showroom-03.jpg)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(grep -E '\\\\.\\(json|js|ts\\)$')",
+      "Bash(grep -r \"medium\\\\|tag\" /c/Users/darkl/OneDrive/Documents/GitHub/designArchive26/*.html)",
+      "Bash(grep -h '<h2 class=\"heading-small c3\">Medium</h2>' -A 1 /c/Users/darkl/OneDrive/Documents/GitHub/designArchive26/*/*.html)",
+      "Bash(grep -h '<div class=\"tag\">' -A 1 /c/Users/darkl/OneDrive/Documents/GitHub/designArchive26/*/*.html)",
+      "Read(//c/Users/darkl/OneDrive/Documents/GitHub/designArchive26/**)",
+      "Bash(python3)"
     ]
   }
 }
