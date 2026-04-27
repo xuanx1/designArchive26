@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: url("../images/overlay_lightbox.png") repeat;
+  background: url("../images/overlay_lightbox.webp") repeat;
   z-index: 2147483646 !important;
 }
 
@@ -20,7 +20,7 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
   background: #ffffff;
-  /*background: url('../images/overlay_lightbox.png') repeat;*/
+  /*background: url('../images/overlay_lightbox.webp') repeat;*/
 }
 
 .flipbook-lightbox-thumb-overlay {
@@ -95,7 +95,6 @@
 .flipbook-zoomLayer-inside {
   display: block;
   position: relative;
-  background-image: url("../grid.jpg");
   background-size: contain;
   text-align: center;
 }
