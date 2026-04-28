@@ -84,6 +84,33 @@
               <div class="project__info-content" style="text-align: center; padding: 4rem 0;">
                 <a href="https://xuanx1.github.io/opecRidge/opec_ridgeline_plot.html" target="_blank" class="footer__link w-inline-block" style="font-size: 1.5rem; letter-spacing: 1px;">View Live -></a>
                 <img src="images/opec-full.webp" loading="lazy" alt="OPEC's Production" class="project-image" style="margin-top: 3rem; width: 140%; max-width: 140%; margin-left: -20%; margin-right: -20%; height: auto;" />
+                    var faded = null;
+                    var pointerTimer = null;
+                    function setFaded(next) {
+                      if (faded === next) return;
+                      faded = next;
+                      cover.style.opacity = next ? '0' : '1';
+                      if (pointerTimer) { clearTimeout(pointerTimer); pointerTimer = null; }
+                      if (next) {
+                        pointerTimer = setTimeout(function(){ cover.style.pointerEvents = 'none'; }, 600);
+                        var p = video.play();
+                        if (p && typeof p.catch === 'function') p.catch(function(){});
+                      } else {
+                        cover.style.pointerEvents = 'auto';
+                        video.pause();
+                      }
+                    }
+                    function update() {
+                      var rect = wrap.getBoundingClientRect();
+                      var winH = window.innerHeight;
+                      var inView = rect.top < winH * 0.85 && rect.bottom > winH * 0.15;
+                      setFaded(inView);
+                    }
+                    window.addEventListener('scroll', update, { passive: true });
+                    window.addEventListener('resize', update);
+                    update();
+                  })();
+                </script>
               </div>
             </div>
           </div>
