@@ -129,6 +129,7 @@
                 var v=document.getElementById('holo-video');
                 var srcs=['video/holo.mp4','video/holo-rev.mp4'];
                 var idx=0;
+                v.addEventListener('loadeddata',function(){ v.classList.add('is-loaded'); });
                 v.src=srcs[0];
                 v.playbackRate=0.5;
                 v.play();
