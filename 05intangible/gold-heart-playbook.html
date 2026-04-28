@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Gold Heart Playbook | CASCADE</title>
+    <title>Gold Heart Playbook | XUAN</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="../css/cat-home-style.css" rel="stylesheet" type="text/css" />
-    <link href="../images/favicon/favicon.svg" rel="shortcut icon" type="image/x-icon" />
+    <link href="../images/favicon/favicon-durian.webp" rel="shortcut icon" type="image/x-icon" />
     <script type="text/javascript">
       !(function (o, c) {
         var n = c.documentElement, t = " w-mod-";
@@ -20,7 +20,7 @@
         <div class="container">
           <div class="top-bar">
             <a href="intan-home.html" class="brand w-inline-block" style="font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 1.1rem; color: inherit; text-decoration: none; letter-spacing: 2px;">← Intangibles</a>
-            <a href="../index.html" class="brand w-inline-block" style="font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 1.1rem; color: inherit; text-decoration: none; letter-spacing: 2px;">CASCADE</a>
+            <a href="../index.html" class="brand w-inline-block" style="font-family: Montserrat, Arial, sans-serif; font-weight: 700; font-size: 1.1rem; color: inherit; text-decoration: none; letter-spacing: 2px;">XUAN</a>
           </div>
         </div>
       </header>
@@ -56,7 +56,19 @@
                     <h2 class="heading-small c3">Medium</h2>
                     <div class="text-large">Playbook Development</div>
                   </div>
+
+                  <div class="project__overview-item">
+
+                    <h2 class="heading-small c3">Location</h2>
+
+                    <div class="text-large">Singapore, Singapore</div>
+
+                  </div>
+
                 </div>
+
+
+
                 <div class="project__intro-text">
                   <p class="text-large">Gold Heart playbook development for business teams, designed to unify visual language, digital assets, and operational guidelines across internal and external channels.</p>
                 </div>
@@ -73,7 +85,7 @@
 
                 <div class="spacer-regular"></div>
 
-                <img src="images/jewel.webp" loading="lazy" alt="ST Business Playbook – Defence" class="project-image" />
+                <img src="images/jewel.gif" loading="lazy" alt="ST Business Playbook – Defence" class="project-image" />
               </div>
             </div>
           </div>
@@ -99,37 +111,13 @@
                 <a href="../05intangible/intan-home.html" class="footer__nav-link w-inline-block" data-hover-img="../images/hover-intangibles.webp"><div class="text-xlarge">Intangibles</div></a>
               </div>
                             <div class="footer__legal">
-                <div>CASCADE © <span class="copyright-year">2026</span> — All rights reserved.</div>
+                <div>XUAN &copy; <span class="copyright-year">2026</span> &mdash; All rights reserved.</div>
                 <div style="display:flex;align-items:center;gap:0.5rem"><a href="../index.html" class="footer__link w-inline-block"><div>Home</div></a> / <a href="../privacy-policy.html" class="footer__link w-inline-block"><div>Privacy Policy</div></a></div>
               </div>
             </div>
           </div>
         </div>
-        <script>
-    (function() {
-      var container = document.querySelector('.footer-bg-container');
-      if (!container) return;
-      var bgImages = [];
-      for (var i = 1; i <= 51; i++) {
-        bgImages.push('../bg/sketch png-' + String(i).padStart(2,'0') + '.webp');
-      }
-      function getRandom(n) { return [...bgImages].sort(function(){return 0.5-Math.random();}).slice(0,n); }
-      function show(imgs) {
-        container.innerHTML = '';
-        imgs.forEach(function(src) {
-          var d = document.createElement('div');
-          d.style.cssText = 'position:absolute;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 2s;width:11vw;height:11vw;pointer-events:none;';
-          d.style.backgroundImage = "url('" + src + "')";
-          d.style.top = (Math.random() * 60) + '%';
-          d.style.left = (Math.random() * 80) + '%';
-          d.style.transform = 'scale(' + (Math.random() * 0.4 + 0.8) + ')';
-          container.appendChild(d);
-          (function(el){ setTimeout(function(){ el.style.opacity='1'; }, 100); })(d);
-        });
-      }
-      show(getRandom(12));
-    })();
-    </script>
+        <script src="../js/footer-sketches.js"></script>
       </footer>
   </body>
 </html>

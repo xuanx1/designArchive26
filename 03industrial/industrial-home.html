@@ -42,10 +42,24 @@
                   <div role="list" class="projects__list w-dyn-items">
 
 
-                    <div role="listitem" class="projects__item w-dyn-item">
+                    <div role="listitem" class="projects__item w-dyn-item" data-year="2024">
+                      <a href="pome3.html" class="projects__link w-inline-block">
+                        <div class="projects__thumb">
+                          <img src="images/pome3-01.webp" loading="eager" alt="POME3" class="thumbnail-project" />
+                          <div class="tag">
+                            <div class="text-small">Furniture Design</div>
+                          </div>
+                        </div>
+                        <div class="projects__title">
+                          <h2 class="heading-medium">POME3</h2>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div role="listitem" class="projects__item w-dyn-item" data-year="2022">
                       <a href="watergen.html" class="projects__link w-inline-block">
                         <div class="projects__thumb">
-                          <img src="images/watergen-01.webp" loading="lazy" alt="Watergen" class="thumbnail-project" />
+                          <img src="images/watergen-01.webp" loading="eager" alt="Watergen" class="thumbnail-project" />
                           <div class="tag">
                             <div class="text-small">Environmental Design</div>
                           </div>
@@ -56,10 +70,10 @@
                       </a>
                     </div>
 
-                    <div role="listitem" class="projects__item w-dyn-item">
+                    <div role="listitem" class="projects__item w-dyn-item" data-year="2017">
                       <a href="arroyo.html" class="projects__link w-inline-block">
                         <div class="projects__thumb">
-                          <img src="images/arroyo-01.webp" loading="lazy" alt="ARROYO" class="thumbnail-project" />
+                          <img src="images/arroyo-01.webp" loading="eager" alt="ARROYO" class="thumbnail-project" />
                           <div class="tag">
                             <div class="text-small">Appliance Design</div>
                           </div>
@@ -70,30 +84,16 @@
                       </a>
                     </div>
 
-                    <div role="listitem" class="projects__item w-dyn-item">
+                    <div role="listitem" class="projects__item w-dyn-item" data-year="2016">
                       <a href="unipod.html" class="projects__link w-inline-block">
                         <div class="projects__thumb">
-                          <img src="images/unipod-01.webp" loading="lazy" alt="UNIPOD" class="thumbnail-project" />
+                          <img src="images/unipod-01.webp" loading="eager" alt="UNIPOD" class="thumbnail-project" />
                           <div class="tag">
                             <div class="text-small">Medical Device Design</div>
                           </div>
                         </div>
                         <div class="projects__title">
                           <h2 class="heading-medium">UNIPOD</h2>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div role="listitem" class="projects__item w-dyn-item">
-                      <a href="pome3.html" class="projects__link w-inline-block">
-                        <div class="projects__thumb">
-                          <img src="images/pome3-01.webp" loading="lazy" alt="POME3" class="thumbnail-project" />
-                          <div class="tag">
-                            <div class="text-small">Kitchenware Design</div>
-                          </div>
-                        </div>
-                        <div class="projects__title">
-                          <h2 class="heading-medium">POME3</h2>
                         </div>
                       </a>
                     </div>
@@ -132,33 +132,7 @@
             </div>
           </div>
         </div>
-        <script>
-    (function() {
-      var container = document.querySelector('.footer-bg-container');
-      if (!container) return;
-      var bgImages = [];
-      for (var i = 1; i <= 51; i++) {
-        bgImages.push('../bg/sketch png-' + String(i).padStart(2,'0') + '.webp');
-      }
-      function getRandom(n) { return [...bgImages].sort(function(){return 0.5-Math.random();}).slice(0,n); }
-      function show(imgs) {
-        container.innerHTML = '';
-        imgs.forEach(function(src) {
-          var d = document.createElement('div');
-          d.style.cssText = 'position:absolute;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 2s;width:11vw;height:11vw;pointer-events:none;';
-          d.style.backgroundImage = "url('" + src + "')";
-          d.style.top = (Math.random() * 60) + '%';
-          d.style.left = (Math.random() * 80) + '%';
-          d.style.transform = 'scale(' + (Math.random() * 0.4 + 0.8) + ')';
-          container.appendChild(d);
-          (function(el){ setTimeout(function(){ el.style.opacity='1'; }, 100); })(d);
-        });
-      }
-      function hide() { container.querySelectorAll('div').forEach(function(d){d.style.opacity='0';}); }
-      function loop() { show(getRandom(5)); setTimeout(function(){ hide(); setTimeout(loop,2000); },4000); }
-      loop();
-    })();
-  </script>
+        <script src="../js/footer-sketches.js"></script>
   </footer>
     </div>
   <script>
@@ -177,16 +151,22 @@
         imgs.forEach(function(img) {
           var rect = img.parentElement.getBoundingClientRect();
           var winH = window.innerHeight;
-          if (rect.bottom < 0 || rect.top > winH) return;
           var progress = (rect.top + rect.height / 2) / winH;
           var shift = (progress - 1) * 20;
+          shift = Math.max(Math.min(shift, 10), -10);
           img.style.transform = 'translateY(' + shift + '%)';
         });
       }
       window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      window.addEventListener('load', update);
+      document.addEventListener('DOMContentLoaded', update);
       update();
     })();
   </script>
+<script src="../js/project-sort.js"></script>
+<script src="../js/tag-color.js"></script>
 <script src="../js/page-transitions.js"></script>
 </body>
 </html>
+

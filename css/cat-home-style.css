@@ -4619,3 +4619,168 @@ figcaption {
   }
 }
 
+
+/* ===== Ported from cascade-sg: behavioral CSS ===== */
+
+/* Accessibility utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Thumbnail fade-in (works with tag-color.js adding .is-loaded) */
+.thumbnail-project { opacity: 0; transition: opacity 0.8s ease; }
+.thumbnail-project.is-loaded { opacity: 1; }
+
+/* ===== ASEAN denomination gallery (asean-banknote.html) ===== */
+.asean-denom-gallery {
+  position: relative;
+  width: 100%;
+  min-height: 100rem;
+  max-height: 120rem;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 2rem 0;
+}
+.asean-denom-item {
+  position: absolute;
+  top: var(--top, 50%);
+  left: var(--x, auto);
+  transform: translateY(calc(-50% + var(--base-y, 0%) + var(--y, 0%))) scale(var(--scale, 1));
+  transition: transform 0.2s ease-out;
+  width: 18rem;
+  max-width: 18rem;
+  z-index: 1;
+  overflow: visible;
+}
+.asean-annotation {
+  position: absolute;
+  top: var(--annotation-top, 50%);
+  left: var(--annotation-left, auto);
+  right: var(--annotation-right, auto);
+  width: 12rem;
+  transform: translateY(-50%) translateX(var(--annotation-x, 14px));
+  opacity: 0;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+  color: #111;
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.25rem;
+  padding: 1rem 1rem 1rem 1.5rem;
+  box-shadow: 0 28px 60px rgba(0,0,0,0.12);
+}
+.asean-denom-item.is-visible .asean-annotation {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+.asean-annotation-line {
+  position: absolute;
+  top: 50%;
+  left: var(--annotation-line-left, -1.15rem);
+  right: var(--annotation-line-right, auto);
+  width: 1rem;
+  height: 2px;
+  background: rgba(0,0,0,0.55);
+  transform: translateY(-50%);
+}
+.asean-annotation-pin {
+  position: absolute;
+  top: 50%;
+  left: var(--annotation-pin-left, -1.7rem);
+  right: var(--annotation-pin-right, auto);
+  width: 0.8rem;
+  height: 0.8rem;
+  background: rgba(0,0,0,0.8);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.asean-annotation-label {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+.denom-5 .asean-annotation-label   { color: #6BBFBF; }
+.denom-10 .asean-annotation-label  { color: #E03030; }
+.denom-50 .asean-annotation-label  { color: #B044B0; }
+.denom-100 .asean-annotation-label { color: #4A7FC4; }
+.denom-200 .asean-annotation-label { color: #E8960E; }
+.asean-annotation-copy {
+  font-size: 0.55rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #adb1b7;
+}
+.asean-denom-item.denom-5   { left: 4%;  z-index: 1; }
+.asean-denom-item.denom-10  { left: 18%; z-index: 2; }
+.asean-denom-item.denom-50  { left: 34%; z-index: 3; }
+.asean-denom-item.denom-100 { left: 52%; z-index: 4; }
+.asean-denom-item.denom-200 { left: 70%; z-index: 5; }
+.asean-denom-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.02) 100%);
+  pointer-events: none;
+}
+.asean-denom-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.8;
+}
+
+/* ASEAN gallery — mobile reflow */
+@media screen and (max-width: 768px) {
+  .asean-denom-gallery {
+    min-height: 0;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1rem 0;
+  }
+  .asean-denom-item {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+    width: 85%;
+    max-width: 85%;
+  }
+  .asean-denom-item.denom-5   { left: auto; width: 55%; max-width: 55%; }
+  .asean-denom-item.denom-10  { left: auto; width: 65%; max-width: 65%; }
+  .asean-denom-item.denom-50  { left: auto; width: 75%; max-width: 75%; }
+  .asean-denom-item.denom-100 { left: auto; width: 85%; max-width: 85%; }
+  .asean-denom-item.denom-200 { left: auto; width: 95%; max-width: 95%; }
+  .asean-annotation {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    width: 12rem !important;
+    margin: 0.5rem 0 0 0 !important;
+    padding: 0.6rem 0.8rem !important;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  .asean-denom-item.is-visible .asean-annotation { transform: none !important; }
+  .asean-annotation-line, .asean-annotation-pin { display: none; }
+  .asean-annotation-label { font-size: 0.75rem; }
+  .asean-annotation-copy { font-size: 0.75rem; }
+}

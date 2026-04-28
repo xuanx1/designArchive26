@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 
 <html lang="en">
 
@@ -80,7 +80,7 @@
 
                 <div class="project__address">
 
-                  <div class="text-large">Kitchenware Design</div>
+                  <div class="text-large">Furniture Design</div>
 
                 </div>
 
@@ -96,7 +96,7 @@
 
                     <h2 class="heading-small c3">Year</h2>
 
-                    <div class="text-large">2021</div>
+                    <div class="text-large">2024</div>
 
                   </div>
 
@@ -112,17 +112,18 @@
 
                     <h2 class="heading-small c3">Medium</h2>
 
-                    <div class="text-large">Kitchenware Design</div>
+                    <div class="text-large">Furniture Design</div>
 
                   </div>
-
+                  <div class="project__overview-item">
+                    <h2 class="heading-small c3">Location</h2>
+                    <div class="text-large">Milan, Italy</div>
+                  </div>
                 </div>
 
                 <div class="project__intro-text">
 
                   <p class="text-large">POME3 draws on the layered geometry of the garlic clove to create a graceful kitchen tool. The stacking form references organic growth while concealing a precision grater mechanism — a study in the elegance achievable when nature informs function.</p>
-
-                </div>
 
               </div>
 
@@ -224,59 +225,7 @@
 
         </div>
 
-        <script>
-
-    (function() {
-
-      var container = document.querySelector('.footer-bg-container');
-
-      if (!container) return;
-
-      var bgImages = [];
-
-      for (var i = 1; i <= 51; i++) {
-
-        bgImages.push('../bg/sketch png-' + String(i).padStart(2,'0') + '.webp');
-
-      }
-
-      function getRandom(n) { return [...bgImages].sort(function(){return 0.5-Math.random();}).slice(0,n); }
-
-      function show(imgs) {
-
-        container.innerHTML = '';
-
-        imgs.forEach(function(src) {
-
-          var d = document.createElement('div');
-
-          d.style.cssText = 'position:absolute;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 2s;width:11vw;height:11vw;pointer-events:none;';
-
-          d.style.backgroundImage = "url('" + src + "')";
-
-          d.style.top = (Math.random() * 60) + '%';
-
-          d.style.left = (Math.random() * 80) + '%';
-
-          d.style.transform = 'scale(' + (Math.random() * 0.4 + 0.8) + ')';
-
-          container.appendChild(d);
-
-          (function(el){ setTimeout(function(){ el.style.opacity='1'; }, 100); })(d);
-
-        });
-
-      }
-
-      function hide() { container.querySelectorAll('div').forEach(function(d){d.style.opacity='0';}); }
-
-      function loop() { show(getRandom(5)); setTimeout(function(){ hide(); setTimeout(loop,2000); },4000); }
-
-      loop();
-
-    })();
-
-  </script>
+        <script src="../js/footer-sketches.js"></script>
 
   </footer>
 
@@ -307,4 +256,5 @@
 </body>
 
 </html>
+
 
