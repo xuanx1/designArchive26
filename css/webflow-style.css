@@ -2912,3 +2912,206 @@ body {
     clear: none !important;
   }
 }
+
+/* Touch tap-target sizing — applies to coarse-pointer devices (Tab S9, phones) */
+@media (pointer: coarse) {
+  .nav-link,
+  .nav-link-2,
+  .w-nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .social a,
+  .nav__social-link {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #copy-email,
+  .footer-bar a {
+    padding: 6px 4px;
+    display: inline-block;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  a,
+  button,
+  .col {
+    touch-action: manipulation;
+  }
+}
+
+/* Galaxy Tab S9 portrait (800×1280) — comfortable column rhythm */
+@media (pointer: coarse) and (max-width: 991px) and (min-width: 700px) {
+  .col .col-title {
+    font-size: clamp(22px, 5vw, 40px) !important;
+  }
+  .col .col-inner {
+    padding: 20px !important;
+  }
+}
+
+/* Touch tablet landscape (>=992px, coarse pointer): side-scrolling carousel.
+   - Cards are narrow (~33vw) so 3+ are visible at once — NOT one card per page
+   - User pans horizontally; whichever card is in the centre of the viewport
+     becomes .scroll-active and reveals its preview image at the desktop default
+     55vw x 70vh placement, centred on that card
+   - Title and poem are NOT animated — no colour change, no fade-in
+   - Webflow IX2 hover transforms are blocked so layout never shifts */
+@media (pointer: coarse) and (min-width: 992px) {
+  .wrapper {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .wrapper::-webkit-scrollbar { display: none; height: 0; }
+
+  .flex {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    height: 100vh !important;
+    /* Outer padding so card 1 + card 5 can snap to centre (scroll room past them) */
+    padding-left: 33.5vw !important;
+    padding-right: 33.5vw !important;
+    box-sizing: content-box !important;
+  }
+
+  .col {
+    flex: 0 0 33vw !important;
+    scroll-snap-align: center;
+    border-right: 1px solid rgba(212, 216, 221, 0.4) !important;
+  }
+
+  /* Block Webflow IX2 hover transforms so the layout never shifts on touch */
+  .flex,
+  .col,
+  .col-inner,
+  .col-link {
+    transform: none !important;
+  }
+
+  .col-inner {
+    padding: 24px 16px !important;
+    font-size: 36px !important;
+    line-height: 1.05 !important;
+    text-align: left !important;
+    position: relative;
+    z-index: 5;
+  }
+  .col-title {
+    font-size: clamp(24px, 3vw, 42px) !important;
+    line-height: 1.05 !important;
+    margin-top: 0 !important;
+    transition: color 0.4s ease, font-size 0.4s ease !important;
+  }
+
+  /* Image hidden by default — eases in (and out) like the desktop hover:
+     symmetric scale + fade so the outgoing image visibly shrinks as it leaves
+     and the incoming image visibly grows as it arrives. */
+  .col .image-holder {
+    opacity: 0 !important;
+    border-radius: 12px !important;
+    transform: translate(-50%, -50%) scale(0.82) !important;
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+                border-radius 0.6s ease !important;
+    pointer-events: none;
+  }
+
+  /* Poem stays hidden — no animations */
+  .col .col-link { display: none !important; }
+
+  /* Centred card: reveal image with larger rounded corners, title goes white + larger */
+  .col.scroll-active {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+  .col.scroll-active .image-holder {
+    opacity: 1 !important;
+    border-radius: 32px !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+  }
+  .col.scroll-active .col-title,
+  .col.scroll-active .col-title a {
+    color: #fff !important;
+    font-size: clamp(36px, 4.5vw, 64px) !important;
+  }
+
+  .hide-mobile { display: none !important; }
+}
+
+/* Tablet portrait footer (Tab S9, iPad) — stack rows, keep clocks + collab visible */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    grid-row-gap: 4px !important;
+    margin-left: 22px !important;
+    margin-right: 22px !important;
+  }
+  #w-node-9485a07ab083 {
+    grid-column: unset !important;
+    text-align: center !important;
+    order: 3 !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+  #clocks-widget {
+    grid-column: unset !important;
+    order: 2 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 1.25rem !important;
+  }
+  #w-node-b4bed388d8a5 {
+    grid-column: unset !important;
+    text-align: center !important;
+    order: 1 !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+}
+
+/* Tablet landscape footer (Tab S9 landscape, small laptops) — keep 3-col grid but give clocks a flexible middle */
+@media (min-width: 992px) and (max-width: 1366px) {
+  .footer-bar {
+    grid-template-columns: auto 1fr auto !important;
+    font-size: 12px !important;
+    align-items: center !important;
+  }
+  .footer-bar > * {
+    float: none !important;
+    clear: none !important;
+    margin: 0 !important;
+    min-width: 0;
+  }
+  #clocks-widget {
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    white-space: nowrap;
+  }
+  #w-node-9485a07ab083 {
+    white-space: nowrap;
+    grid-column: 1 / 2 !important;
+  }
+  #w-node-b4bed388d8a5 {
+    white-space: nowrap;
+    grid-column: 3 / 4 !important;
+    text-align: right !important;
+  }
+}

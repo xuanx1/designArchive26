@@ -4792,3 +4792,20 @@ figcaption {
   .asean-annotation-label { font-size: 0.75rem; }
   .asean-annotation-copy { font-size: 0.75rem; }
 }
+
+/* Tablet (Tab S9, iPad) — keep XUAN 2026 inline with home/privacy on resume/privacy pages */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .footer__legal {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    grid-row-gap: 0 !important;
+  }
+  .footer__legal > div:first-child {
+    order: 1 !important;
+  }
+  .footer__legal > div:last-child {
+    order: 2 !important;
+  }
+}

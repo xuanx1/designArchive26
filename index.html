@@ -137,9 +137,12 @@ body:hover .cursor,
             cursor: none !important;
           }
 
-          @media (max-width: 768px) {
+          @media (max-width: 768px), (pointer: coarse), (hover: none) {
             .cursor-wrapper {
               display: none;
+            }
+            body, * {
+              cursor: auto !important;
             }
           }
         </style>
@@ -627,17 +630,15 @@ body:hover .cursor,
     </script>
 
     <script>
-      // Mobile tap-to-reveal, second tap navigates
+      // Mobile tap-to-reveal (2x3 grid, <=991px): first tap reveals, second tap navigates.
       if (window.matchMedia('(max-width: 991px)').matches) {
         document.querySelectorAll('.flex .col').forEach(function (col) {
           col.addEventListener('click', function (e) {
             var link = col.querySelector('.col-title a');
             if (!link) return;
             if (col.classList.contains('mob-active')) {
-              // Second tap on same col — navigate
               window.location.href = link.getAttribute('href');
             } else {
-              // First tap — reveal image, collapse others
               e.preventDefault();
               e.stopPropagation();
               document.querySelectorAll('.flex .col').forEach(function (c) {
@@ -648,6 +649,78 @@ body:hover .cursor,
           });
         });
       }
+
+      // Touch tablet landscape carousel: on every scroll, find the card whose
+      // centre is closest to the wrapper's centre and reveal its image.
+      // After 3s of no user input, auto-scroll loops through the categories.
+      (function () {
+        if (!window.matchMedia) return;
+        if (!window.matchMedia('(pointer: coarse) and (min-width: 992px)').matches) return;
+        var wrapper = document.querySelector('.wrapper');
+        var cols = document.querySelectorAll('.flex .col');
+        if (!wrapper || !cols.length) return;
+
+        function setActive(target) {
+          cols.forEach(function (c) {
+            c.classList.toggle('scroll-active', c === target);
+          });
+        }
+
+        function pickCentredCard() {
+          var rect = wrapper.getBoundingClientRect();
+          var centre = rect.left + rect.width / 2;
+          var best = null, bestDist = Infinity;
+          for (var i = 0; i < cols.length; i++) {
+            var r = cols[i].getBoundingClientRect();
+            var cardCentre = r.left + r.width / 2;
+            var dist = Math.abs(cardCentre - centre);
+            if (dist < bestDist) {
+              bestDist = dist;
+              best = cols[i];
+            }
+          }
+          if (best) setActive(best);
+        }
+
+        function scrollLeftFor(card) {
+          var cardRect = card.getBoundingClientRect();
+          var wrapperRect = wrapper.getBoundingClientRect();
+          var cardCentre = cardRect.left + cardRect.width / 2;
+          var wrapperCentre = wrapperRect.left + wrapperRect.width / 2;
+          return wrapper.scrollLeft + (cardCentre - wrapperCentre);
+        }
+
+        wrapper.addEventListener('scroll', pickCentredCard, { passive: true });
+        window.addEventListener('resize', function () {
+          if (document.querySelector('.col.scroll-active')) pickCentredCard();
+        });
+
+        // Auto-scroll loop — cancels on first user touch
+        var userInteracted = false;
+        function cancelAuto() {
+          userInteracted = true;
+          if (autoStart) clearTimeout(autoStart);
+        }
+        ['touchstart', 'pointerdown', 'wheel'].forEach(function (evt) {
+          wrapper.addEventListener(evt, cancelAuto, { passive: true });
+        });
+
+        var autoStart = setTimeout(function () {
+          if (userInteracted) return;
+          var idx = 0;
+          // Already centred on card 0 at scrollLeft=0; no scroll event would fire,
+          // so activate Identities directly to kick off the reveal animation.
+          setActive(cols[0]);
+          var autoInterval = setInterval(function () {
+            if (userInteracted) {
+              clearInterval(autoInterval);
+              return;
+            }
+            idx = (idx + 1) % cols.length;
+            wrapper.scrollTo({ left: scrollLeftFor(cols[idx]), behavior: 'smooth' });
+          }, 3000);
+        }, 3000);
+      })();
     </script>
   </body>
 </html>

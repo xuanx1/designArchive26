@@ -48,7 +48,7 @@
     '.cursor-follower{width:.4em;height:.4em;background:#333333;transform:translate(-50%,-50%);transition:opacity .3s,left .1s ease-out,top .1s ease-out;}',
     'body:hover .cursor,body:hover .cursor-follower{opacity:1;}',
     '.cursor.active{transform:translate(-50%,-50%) scale(1.6);}',
-    '@media(max-width:768px){.cursor,.cursor-follower{display:none;}body,*{cursor:auto!important}}'
+    '@media(max-width:768px),(pointer:coarse),(hover:none){.cursor,.cursor-follower{display:none;}body,*{cursor:auto!important}}'
   ].join('');
   document.head.appendChild(style);
 
