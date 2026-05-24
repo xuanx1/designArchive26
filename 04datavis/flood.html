@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Food Establishment Inspection Data in the United States, Mapped | XUAN</title>
+    <title>Flood: Atlas of the Drowned Century | XUAN</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="../css/cat-home-style.css" rel="stylesheet" type="text/css" />
     <link href="../images/favicon/favicon-durian.webp" rel="shortcut icon" type="image/x-icon" />
@@ -29,7 +29,7 @@
         <section class="hero">
           <div class="container">
             <div class="hero__content">
-              <img src="images/foodsafe.webp" loading="lazy" alt="Food Establishment Inspection Data in the United States, Mapped" class="absolute-img" />
+              <img src="images/flood.webp" loading="lazy" alt="Flood: Atlas of the Drowned Century" class="absolute-img" />
             </div>
           </div>
         </section>
@@ -39,15 +39,15 @@
             <div class="max-width-regular">
               <div class="project__intro-content">
                 <div class="project__address">
-                  <div class="text-large">Open Data</div>
+                  <div class="text-large">Joyplot</div>
                 </div>
                 <div class="project__title">
-                  <h1 class="heading-huge">Food Establishment Inspection Data in the United States, Mapped</h1>
+                  <h1 class="heading-huge">Flood: Atlas of the Drowned Century</h1>
                 </div>
                 <div class="project__overview">
                   <div class="project__overview-item">
                     <h2 class="heading-small c3">Year</h2>
-                    <div class="text-large">2024</div>
+                    <div class="text-large">2025</div>
                   </div>
                   <div class="project__overview-item">
                     <h2 class="heading-small c3">Category</h2>
@@ -55,11 +55,23 @@
                   </div>
                   <div class="project__overview-item">
                     <h2 class="heading-small c3">Medium</h2>
-                    <div class="text-large">Multi-City Map</div>
+                    <div class="text-large">Joyplot</div>
                   </div>
+
+                  <div class="project__overview-item">
+
+                    <h2 class="heading-small c3">Location</h2>
+
+                    <div class="text-large">Global</div>
+
+                  </div>
+
                 </div>
+
+
+
                 <div class="project__intro-text">
-                  <p class="text-large">A multi-city map of food establishment health inspection scores across the United States, drawn from public open data. Filtering by grade, violation type, and cuisine category reveals patterns in food safety compliance — answering the question that matters every time we sit down to eat: does our restaurant make the cut?</p>
+                  <p class="text-large">A joyplot visualisation of global population density across latitude bands, overlaid against a rising sea-level slider that simulates coastal inundation from 0 to 70 metres. Combining UN urbanisation figures, elevation models, and climate-calibrated projections, the work renders a speculative atlas of the drowned century &mdash; mapping which regions face demographic collapse and which remain habitable as the oceans rise.</p>
                 </div>
               </div>
             </div>
@@ -70,8 +82,8 @@
           <div class="container">
             <div class="max-width-regular">
               <div class="project__info-content" style="text-align: center; padding: 4rem 0;">
-                <a href="https://xuanx1.github.io/foodSafe/multi-city-inspection-map.html" target="_blank" class="footer__link w-inline-block" style="font-size: 1.5rem; letter-spacing: 1px;">View Live →</a>
-                <img src="images/foodsafe.webp" loading="lazy" alt="Food Establishment Inspection Data in the United States, Mapped" class="project-image" style="margin-top: 3rem;" />
+                <a href="https://xuanx1.github.io/flood/Flood%20Joyplot.html" target="_blank" class="footer__link w-inline-block" style="font-size: 1.5rem; letter-spacing: 1px;">View Live -></a>
+                <img src="images/flood.webp" loading="lazy" alt="Flood: Atlas of the Drowned Century" class="project-image" style="margin-top: 3rem; width: 140%; max-width: 140%; margin-left: -20%; margin-right: -20%; height: auto;" />
               </div>
             </div>
           </div>
@@ -104,37 +116,11 @@
             </div>
           </div>
         </div>
-        <script>
-    (function() {
-      var container = document.querySelector('.footer-bg-container');
-      if (!container) return;
-      var bgImages = [];
-      for (var i = 1; i <= 51; i++) {
-        bgImages.push('../bg/sketch png-' + String(i).padStart(2,'0') + '.webp');
-      }
-      function getRandom(n) { return [...bgImages].sort(function(){return 0.5-Math.random();}).slice(0,n); }
-      function show(imgs) {
-        container.innerHTML = '';
-        imgs.forEach(function(src) {
-          var d = document.createElement('div');
-          d.style.cssText = 'position:absolute;background-size:contain;background-position:center;background-repeat:no-repeat;opacity:0;transition:opacity 2s;width:11vw;height:11vw;pointer-events:none;';
-          d.style.backgroundImage = "url('" + src + "')";
-          d.style.top = (Math.random() * 60) + '%';
-          d.style.left = (Math.random() * 80) + '%';
-          d.style.transform = 'scale(' + (Math.random() * 0.4 + 0.8) + ')';
-          container.appendChild(d);
-          (function(el){ setTimeout(function(){ el.style.opacity='1'; }, 100); })(d);
-        });
-      }
-      function hide() { container.querySelectorAll('div').forEach(function(d){d.style.opacity='0';}); }
-      function loop() { show(getRandom(5)); setTimeout(function(){ hide(); setTimeout(loop,2000); },4000); }
-      loop();
-    })();
-  </script>
+        <script src="../js/footer-sketches.js"></script>
   </footer>
     </div>
 
-  
+
   <script>
     (function() {
       document.querySelectorAll('.footer__nav-link[data-hover-img]').forEach(function(link) {
